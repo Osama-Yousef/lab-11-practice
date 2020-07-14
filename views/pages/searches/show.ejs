@@ -1,0 +1,68 @@
+<!-- here we will make rendering (templating) process using ejs  -->
+<!-- يعني هاي الصفحه رح نعمل فيها رندرنغ والشكل ال اتش تي ام ال تبع ال سيرشيز يعنيييي هاي الصفحه كانها هي صفحه النتائجلكن فوق الرووت بكون سيرشيز مع انه كل شي مسؤول عن السيرشيز موجود هنا -->
+<!-- الصفحه هاي مشابهه لصفحه ال نيوو لكن الاختلاف بالميين انه هناك كان في فورم و هون في رندرنغ رح يكون اما باقي الكود نفسه تماما لانهما نفس الشكل تبع ال اتش تي ام ال فبوخذ الكود بال نيوو وبحطه هون وبعدل بس ال مييين -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/modules.css">
+    <link rel="stylesheet" href="../styles/icons.css">
+
+</head>
+
+<body>
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <h2>Best Book!</h2>
+        <div id="myLinks">
+            <a href="../index">Home</a>
+            <a href="./searches/new">Search for google books API</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <header>
+        <h1> Search by Title or Author </h1>
+    </header>
+
+
+    <!-- the only difference from this page and new pge is the main part -->
+    <!-- the lines of code below will do the rendering(templating ) using ejs -->
+    <!-- we must give an id for main (the part that contains templating ) -->
+    <main id="showMain"> 
+        <!-- we talked about data that will contains the dataArray and we said that we will use it in rendering -->
+        <% data.forEach(val => { %>   <!-- val is new name from us  -->
+        <div class="container"> <!-- in rendering we must add a div with class that will work as container for all the results that will render  -->
+            <img src="<%= val.image %>"> <!-- notice that we give every property in the const html tag suitable for each property -->
+            <h3><%= val.title%></h3> <!-- note that inside each html tag there is strawberry with = and val.property -->
+                <h4><%= val.author %></h4>
+                <p><%= val.description%></p>
+        </div>
+        <% }) %>
+    </main>
+<!-- end of rendering(templating) using ejs -->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

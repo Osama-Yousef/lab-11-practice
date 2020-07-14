@@ -1,0 +1,24 @@
+@media (min-width: 375px) {
+    form {
+        display: grid;
+        width: 73vw;
+        margin-top: 34px;
+        margin-left: 13%;
+    }
+    form input {
+        padding: 11px;
+    }
+    form label{
+        padding: 11px;
+        background-color: #CECECE;
+    }
+    form button{
+        padding: 14px;
+        background-color: black;
+        color: white;
+        border-radius: 5%;
+    }
+    input[type="radio"]  {
+        margin-left: 13%;
+    }
+}

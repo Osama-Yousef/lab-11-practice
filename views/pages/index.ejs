@@ -1,0 +1,54 @@
+<!-- this page we said that it represents the home page so we know that our home page doesnt contain (main) and contain just the general shape of html which exist in new and show pages , we just add (saved books) instead of search by .. in the header portion-->
+<!-- sooo here we will copy and paste the new page to here , then delete the (main) part and change the header part  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book list</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="styles/icons.css">
+
+</head>
+<body>
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <h2>Best Book!</h2>
+        <div id="myLinks">
+          <a href="index">Home</a>
+          <a href="searches/new">Search for google books API</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+      <!-- changing the header (1) -->
+      <header>
+        <h1>Saved Books</h1>
+    </header>
+
+
+    <!-- deleting the main part (2) -->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> 
+
+      <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+        </script>
+    
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!-- in this file it will contains the form that we need , so we will start making html5  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New</title>
+    <!-- to link css files with html -->
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/modules.css">
+    <link rel="stylesheet" href="../styles/icons.css">
+
+</head>
+<body>
+
+
+<!-- from here we will try to make "new" page looks like the provided pictures  -->
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <h2>Best Book!</h2>
+        <!-- for hambrger menu  -->
+        <div id="myLinks">
+          <a href="../index">Home</a>  <!-- here when i choose home , we will move to home(index ) so we put the route and we can put the path of file instead    -->
+          <a href="../searches/new">Search for google books API</a>
+        </div>
+        <!-- to show or hide the links above(home, search ...) in the hambrger menu when we click on it -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+      <header>
+        <h1> Search by Title or Author </h1>
+    </header>
+<!-- starting the form -->
+    <main>
+      <!-- action : include the name of page which form data will send to it
+      method :specifies how to send form-data , he form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+    **get : Default. Appends the form-data to the URL in name/value pairs: URL?name=value&name=value
+    **post : Sends the form-data as an HTTP post transaction
+    **Notes on GET:
+
+Appends form-data into the URL in name/value pairs
+The length of a URL is limited (about 3000 characters)
+Never use GET to send sensitive data! (will be visible in the URL)
+Useful for form submissions where a user wants to bookmark the result
+GET is better for non-secure data, like query strings in Google
+
+    **Notes on POST:
+
+Appends form-data inside the body of the HTTP request (data is not shown in URL)
+Has no size limitations
+Form submissions with POST cannot be bookmarked
+    -->
+    <form action="/searches" method="post"><!--we did that because he want that when we search for something(search query) to be included into the api request 
+    **we put post and /searches because  in the feature 3 they said that we must make a route of post type for /searches to make api request -->
+        <input required type="text" placeholder="Enter a Title or Author" name="search"><br>
+        <label>Title
+        <input required type="radio" name="radio" value="title">
+        </label><br>
+        <label>Author
+        <input required type="radio" name="radio" value="author">
+        </label><br>
+        <button>Search for Google Books API </button>
+      </form>
+    </main>
+    <!-- end of the form -->
+    <!-- now back to server.js to make constructor and route handler and use superagent -->
+
+    <!-- for showing and hiding in hambrger menu -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> 
+
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+        </script>
+</body>
+</html>
